@@ -1,0 +1,16 @@
+{
+  "id": "562034",
+  "name": "终端管理平台",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5961324",
+      "name": "路由器",
+      "font_class": "luyouqi",
+      "unicode": "ec62",
+      "unicode_decimal": 60514
+    }
+  ]
+}
