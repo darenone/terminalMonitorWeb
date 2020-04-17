@@ -12,12 +12,21 @@ module.exports = {
         .set('_c', resolve('src/components')) // 用_c代替src/components,我们需要引入组件时，只需要_c/HelloWorld.vue即可
     },
     productionSourceMap: false, // 打包时不生成map文件，这样减少打包的体积，加快打包速度
+    outputDir: 'terminalmonitorweb', // 打包后项目目录名称
     // 跨域配置
     devServer: {
         open: true, // 浏览器自动打开
         hot: true, // 热更新，保存自动更新
         host: '0.0.0.0', // 局域网内可以访问
         port: 8082,
+        proxy: {
+            '/idcMonitorServer': {
+                target: 'http://10.0.0.186:18090',
+                changeOrigin: true,
+                // pathRewrite: {
+                //     '^/idcMonitorServer': ''
+                // }
+            }
+        }
     }
-
 }

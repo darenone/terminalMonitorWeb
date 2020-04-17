@@ -3,7 +3,7 @@ import axios from "axios";
 import {Message} from "view-design";
 import router from "./router";
 
-var SERVER_URL = '/fomstsprobe/';
+var SERVER_URL = '/idcMonitorServer/';
 //全局错误处理Map
 var GLOBAL_ERROR_MAP = {
     "-1": {

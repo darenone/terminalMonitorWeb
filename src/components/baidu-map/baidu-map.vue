@@ -18,13 +18,20 @@ export default {
     data () {
         return {
             center: {lng: 0, lat: 0},
-            zoom: 3
+            zoom: 3,
+            BMap: null,
+            map: null,
+            ZMap: null, // ZMap函数实例
         }
     },
     computed: {
         ...mapState('area', [
             'selectedName',
+            'showBaiduMap'
         ]),
+        areaName () {
+            return this.selectedName
+        }
     },
     methods: {
         ready ({BMap, map}) {
@@ -48,7 +55,14 @@ export default {
             // let marker2 = new BMap.Marker(point2)
             // map.addOverlay(marker1)
             // map.addOverlay(marker2)
-            new ZMap({BMap, map}).init()
+            console.log('ready')
+            this.BMap = null
+            this.map = null
+            this.BMap = BMap
+            this.map = map
+            let areaName = this.getAreaName(this.selectedName)
+            this.ZMap = new ZMap({BMap, map})
+            this.ZMap.init(areaName)
         },
         // 添加比例尺控件
         add_scaleControl ({BMap, map}) {
@@ -63,11 +77,28 @@ export default {
         },
         reload () {
             // console.log('地图重新加载了')
+        },
+        getAreaName (name) {
+            let reg = /\{(.+?)\}/g // 匹配大括号
+            let areaName = reg.exec(name)
+            if (areaName) {
+                return areaName[1]
+            } else {
+                console.log('区县名字未知')
+            }
         }
     },
+    watch: {
+        areaName(name) {
+            // console.log(name)
+            let BMap = this.BMap
+            let map = this.map
+            let areaName = this.getAreaName(this.selectedName)
+            this.ZMap.init(areaName)
+        },
+    },
     mounted () {
-        console.log(this.selectedName)
-        console.log('地图初始化了')
+
     },
 }
 </script>

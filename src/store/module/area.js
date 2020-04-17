@@ -36,9 +36,6 @@ const mutations = {
     },
     SET_SHOW_BAIDU_MAP (state, bool) {
         state.showBaiduMap = bool
-        if (bool) {
-            console.log('要更新百度地图')
-        }
     }
 }
 const actions = {
