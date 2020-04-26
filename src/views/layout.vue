@@ -8,7 +8,7 @@
                         <span>终端管理平台</span>
                     </div>
                     <div class="layout-nav">
-                        <Menu class="menu-box" width="auto" theme="dark">
+                        <Menu ref="iMenu" class="menu-box" width="auto" theme="dark" :active-name="activeName" :open-names="openNames">
                             <template v-for="(item, index) in menuList">
                                 <i-menu-item v-if="!item.children" :key="`menu_item_${index}`" :name="item.title" :to="item.path">{{item.title}}</i-menu-item>
                                 <i-re-submenu v-else :key="`menu_item_${index}`" :parent="item"></i-re-submenu>
@@ -59,7 +59,9 @@ export default {
     data () {
         return {
             menuList: [],
-            collapsed: false
+            collapsed: false,
+            activeName: '',
+            openNames: []
         }
     },
     methods: {
@@ -68,24 +70,34 @@ export default {
             let arr = []
             index++
             list.forEach(e => {
-                if (e.meta && e.meta.show) {
-                    if (e.children) {
-                        let children = this.loopFun(e.children, index, e.path)
-                        arr.push({
-                        // path: e.path,
-                        title: e.meta.title,
-                        children: children,
-                        // icon: e.meta.icon,
-                        level: index
-                        })
-                    } else {
-                        arr.push({
-                        path: path ? path + '/' + e.path : e.path,
-                        title: e.meta.title,
-                        // icon: e.meta.icon,
-                        level: index
-                        })
+                // console.log(e)
+                if (e.meta) {
+                    if (e.meta.show) {
+                        if (e.children) {
+                            let children = this.loopFun(e.children, index, e.path)
+                            arr.push({
+                                // path: e.path,
+                                title: e.meta.title,
+                                children: children,
+                                // icon: e.meta.icon,
+                                level: index
+                            })
+                        } else {
+                            arr.push({
+                                path: path ? path + '/' + e.path : e.path,
+                                title: e.meta.title,
+                                // icon: e.meta.icon,
+                                level: index
+                            })
+                        }
                     }
+                } else {
+                    arr.push({
+                        path: e.path,
+                        title: e.children[0].meta.title,
+                        // icon: e.meta.icon,
+                        level: index
+                    })
                 }
             })
             return arr;
@@ -96,7 +108,21 @@ export default {
     },
     mounted () {
         this.menuList = this.loopFun(this.$router.options.routes, 0, '')
-        // console.log(this.menuList)
+        this.$nextTick(() => {
+            console.log(this.$route.meta.id)
+            this.activeName = this.$route.meta.id || ''
+            this.openNames = this.$route.meta.parentId ? [ this.$route.meta.parentId ] : []
+        })
+    },
+    watch: {
+        // $route (to, from) {
+        //     this.activeName = to.meta.id || ''
+        //     this.openNames = to.meta.parentId ? [ to.meta.parentId ] : []
+        //     this.$nextTick(() => {
+        //         this.$refs.iMenu.updateOpened()
+        //         this.$refs.iMenu.updateActiveName()
+        //     })
+        // }
     }
 }
 </script>
@@ -106,14 +132,14 @@ export default {
     .layout-outer {
         height: 100%;
         .side-wrapper {
-            background:  #001529f5;
+            // background:  #001529f5;
             .layout-logo {
                 height: 64px;
                 line-height: 64px;
                 font-size: 1.4em;
                 color: white;
-                font-weight: 600;
-                background: rgba(0, 40, 77, 1);
+                // font-weight: 600;
+                // background: rgba(0, 40, 77, 1);
             }
             .ivu-tooltip, .drop-menu-a {
                 width: 100%;
@@ -134,7 +160,7 @@ export default {
                 }
             }
             .main-content {
-                background: rgba(0, 21, 41, 1);
+                background: #05132A;
             }
         }
     }

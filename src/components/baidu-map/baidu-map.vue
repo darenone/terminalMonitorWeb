@@ -1,11 +1,12 @@
 <template>
     <vue-baidu-map class="bm-view" ak="xHuqN6if3aQHIyH4rwTkGc3NRgF4GLby" 
         :center="center" 
-        :zoom="zoom" 
+        :min-zoom="minZoom"
         @ready="ready" 
         @load="load" 
         @unload="unload" 
-        @reload="reload">
+        @reload="reload"
+        @click="click">
     </vue-baidu-map>
 </template>
 <script>
@@ -18,7 +19,7 @@ export default {
     data () {
         return {
             center: {lng: 0, lat: 0},
-            zoom: 3,
+            minZoom: 12,
             BMap: null,
             map: null,
             ZMap: null, // ZMap函数实例
@@ -77,6 +78,9 @@ export default {
         },
         reload () {
             // console.log('地图重新加载了')
+        },
+        click () {
+            console.log('点击了')
         },
         getAreaName (name) {
             let reg = /\{(.+?)\}/g // 匹配大括号
