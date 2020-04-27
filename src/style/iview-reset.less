@@ -20,3 +20,45 @@
     background: @bg-hover;
     color: @font-color-hover;
 }
+
+// select选择框样式
+.ivu-select {
+    color: @color-fff!important;
+    .ivu-select-selection {
+        border-color: @color-94AADC;
+        background-color: transparent;
+        .ivu-select-selected-value, .ivu-select-placeholder {
+            border-right: 1px solid @color-94AADC;
+            margin-right: 31px;
+            padding-right: 0;
+        }
+        .ivu-select-arrow {
+            color: @color-94AADC;
+        }
+    }
+    .ivu-select-selection:hover {
+        border-color: @color-00D2EF;
+        .ivu-select-selected-value, .ivu-select-placeholder {
+            border-right: 1px solid @color-00D2EF;
+        }
+    }
+    .ivu-select-dropdown {
+        background: @color-163466;
+        color: @color-94AADC;
+        .ivu-select-dropdown-list {
+            .ivu-select-item {
+                color: @color-94AADC;
+            }
+            .ivu-select-item:hover {
+                color: @color-01DAF9;
+                background-color: @color-21509F;
+            }
+            .ivu-select-item-selected, .ivu-select-item-selected:hover {
+                color: @color-01DAF9;
+            }
+            .ivu-select-item-focus {
+                background-color: @color-21509F;
+            }
+        }
+    }
+}

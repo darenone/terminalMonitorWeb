@@ -8,9 +8,9 @@
                         <span>终端管理平台</span>
                     </div>
                     <div class="layout-nav">
-                        <Menu ref="iMenu" class="menu-box" width="auto" theme="dark" :active-name="activeName" :open-names="openNames">
+                        <Menu ref="iMenu" class="menu-box" width="auto" theme="dark" :accordion="true" :active-name="activeName" :open-names="openNames">
                             <template v-for="(item, index) in menuList">
-                                <i-menu-item v-if="!item.children" :key="`menu_item_${index}`" :name="item.title" :to="item.path">{{item.title}}</i-menu-item>
+                                <i-menu-item v-if="!item.children" :key="`menu_item_${index}`" :name="item.id" :to="item.path"><i :class="[item.icon ? item.icon : '', 'nav-icon']"></i>{{item.title}}</i-menu-item>
                                 <i-re-submenu v-else :key="`menu_item_${index}`" :parent="item"></i-re-submenu>
                             </template>
                         </Menu>
@@ -18,7 +18,7 @@
                 </div>
                 <div v-else>
                     <div class="layout-logo">
-                        <i class="iconfont icon-luyouqi" style="font-size: 18px;"></i>
+                        <i class="iconfont icon-jifanglouceng" style="font-size: 18px;"></i>
                     </div>
                     <template v-for="(item, index) in menuList">
                         <side-menu-dropdown v-if="item.children" :showTitle="false" :key="index" :parent="item"></side-menu-dropdown>
@@ -76,14 +76,16 @@ export default {
                         if (e.children) {
                             let children = this.loopFun(e.children, index, e.path)
                             arr.push({
+                                id: e.meta.id,
                                 // path: e.path,
                                 title: e.meta.title,
                                 children: children,
-                                // icon: e.meta.icon,
+                                icon: e.meta.icon,
                                 level: index
                             })
                         } else {
                             arr.push({
+                                id: e.meta.id,
                                 path: path ? path + '/' + e.path : e.path,
                                 title: e.meta.title,
                                 // icon: e.meta.icon,
@@ -93,9 +95,10 @@ export default {
                     }
                 } else {
                     arr.push({
+                        id: e.children[0].meta.id,
                         path: e.path,
                         title: e.children[0].meta.title,
-                        // icon: e.meta.icon,
+                        icon: e.children[0].meta.icon,
                         level: index
                     })
                 }
@@ -107,62 +110,29 @@ export default {
         }
     },
     mounted () {
+        let timer = ''
         this.menuList = this.loopFun(this.$router.options.routes, 0, '')
         this.$nextTick(() => {
-            console.log(this.$route.meta.id)
             this.activeName = this.$route.meta.id || ''
             this.openNames = this.$route.meta.parentId ? [ this.$route.meta.parentId ] : []
+            if (timer) {
+                clearInterval(timer)
+            }
+            timer = setTimeout(() => {
+                this.$refs.iMenu.updateOpened()
+                this.$refs.iMenu.updateActiveName()
+            }, 50)
         })
     },
     watch: {
-        // $route (to, from) {
-        //     this.activeName = to.meta.id || ''
-        //     this.openNames = to.meta.parentId ? [ to.meta.parentId ] : []
-        //     this.$nextTick(() => {
-        //         this.$refs.iMenu.updateOpened()
-        //         this.$refs.iMenu.updateActiveName()
-        //     })
-        // }
+        $route (to, from) {
+            this.activeName = to.meta.id || ''
+            this.openNames = to.meta.parentId ? [ to.meta.parentId ] : []
+            // this.$nextTick(() => {
+            //     this.$refs.iMenu.updateOpened()
+            //     this.$refs.iMenu.updateActiveName()
+            // })
+        }
     }
 }
 </script>
-<style lang="less" scoped>
-.layout-wrapper {
-    height: 100%;
-    .layout-outer {
-        height: 100%;
-        .side-wrapper {
-            // background:  #001529f5;
-            .layout-logo {
-                height: 64px;
-                line-height: 64px;
-                font-size: 1.4em;
-                color: white;
-                // font-weight: 600;
-                // background: rgba(0, 40, 77, 1);
-            }
-            .ivu-tooltip, .drop-menu-a {
-                width: 100%;
-                display: block;
-                text-align: center;
-                padding: 5px 0;
-            }
-        }
-        .main-wrapper {
-            .ivu-layout-header {
-                display: flex;
-                justify-content: space-between;
-                padding: 0 10px;
-                .header-left {
-                    font-size: 2em;
-                    color: white;
-                    cursor: pointer;
-                }
-            }
-            .main-content {
-                background: #05132A;
-            }
-        }
-    }
-}
-</style>

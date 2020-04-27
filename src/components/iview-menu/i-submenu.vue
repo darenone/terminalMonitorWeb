@@ -13,6 +13,8 @@ export default {
             type: String,
             default: ''
         }
+    },
+    mounted () {
     }
 }
 </script>
