@@ -108,6 +108,6 @@ export default {
 </script>
 <style lang="less">
 .bm-view {
-    height: 500px;
+    height: 100%;
 }
 </style>

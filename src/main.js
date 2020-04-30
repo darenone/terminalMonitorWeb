@@ -6,10 +6,15 @@ import './plugins/iview.js'
 import Bus from './bus/index'
 import './assets/font/iconfont/iconfont.css'
 import $http from './$http'
+import vueFilter from './filter/index'
 
 Vue.config.productionTip = false
 Vue.prototype.$bus = Bus
-Vue.use($http);
+Vue.use($http)
+
+for (let key in vueFilter){
+  Vue.filter(key,vueFilter[key])
+}
 
 new Vue({
   router,

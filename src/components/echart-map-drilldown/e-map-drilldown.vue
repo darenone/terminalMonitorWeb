@@ -1,5 +1,5 @@
 <template>
-    <div class="map-wrapper">
+    <div class="map-wrapper" :style="styles">
         <div class="map-header">
             <area-select></area-select>
         </div>
@@ -29,6 +29,14 @@ export default {
         EchartMap,
         AreaSelect,
         VueBaiduMap
+    },
+    props: {
+        styles: {
+            type: Object,
+            default () {
+                return {}
+            }
+        }
     },
     data () {
         return {
@@ -80,35 +88,4 @@ export default {
 }
 </script>
 <style lang="less">
-.map-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    .map-header {
-        height: 50px;
-        flex: 50px 0;
-        background: antiquewhite;
-    }
-    .map-body {
-        flex: 1;
-        background: lightcyan;
-        position: relative;
-        .link {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            z-index: 10;
-            background: black;
-            color: white;
-            .select-name {
-                user-select: none;
-                cursor: pointer;
-                &:hover {
-                    // color: '#3c97f8';
-                }
-            }
-        }
-    }
-}
 </style>

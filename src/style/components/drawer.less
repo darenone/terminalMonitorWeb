@@ -1,0 +1,50 @@
+
+.drawer-box {
+    position: relative;
+    float: right;
+    height: 0;
+    width: 0;
+    .drawer-contain {
+        // border: 1px solid @color-21509F;
+        position: absolute;
+        right: 0;
+        top: 0;
+        // border-radius: 5px;
+        background: rgba(0, 40, 77, 0.48);
+        z-index: 50;
+        .trun-off {
+            width: 14px;
+            height: 30px;
+            background: @color-21509F;
+            color: @color-01DAF9;
+            position: absolute;
+            top: 47%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+            z-index: 100;
+        }
+    }
+    .drawer-contain2 {
+        position: absolute;
+        right: 0;
+        top: 0;
+        .trun-on {
+            width: 14px;
+            height: 30px;
+            background: @color-21509F;
+            color: @color-01DAF9;
+            position: absolute;
+            top: 47%;
+            right: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border-radius: 5px 0 0 5px;
+            cursor: pointer;
+            z-index: 300;
+        }
+    }
+}

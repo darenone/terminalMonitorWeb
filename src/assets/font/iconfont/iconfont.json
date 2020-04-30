@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "551965",
+      "name": "箭头",
+      "font_class": "arrow-right-copy-copy",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "810220",
+      "name": "箭头",
+      "font_class": "jiantou-copy",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "6940823",
+      "name": "下--箭头",
+      "font_class": "xia--jiantou",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "6940832",
+      "name": "上--箭头",
+      "font_class": "shang--jiantou",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
       "icon_id": "1133714",
       "name": "分析",
       "font_class": "icon1",
@@ -32,13 +60,6 @@
       "font_class": "xinzeng1",
       "unicode": "e631",
       "unicode_decimal": 58929
-    },
-    {
-      "icon_id": "3786926",
-      "name": "系统",
-      "font_class": "yanjizhushou-shangchuan_xitong",
-      "unicode": "e633",
-      "unicode_decimal": 58931
     },
     {
       "icon_id": "444569",
@@ -202,25 +223,11 @@
       "unicode_decimal": 59506
     },
     {
-      "icon_id": "9512560",
-      "name": "筛选",
-      "font_class": "filter",
-      "unicode": "e621",
-      "unicode_decimal": 58913
-    },
-    {
       "icon_id": "11758187",
       "name": "机房楼层",
       "font_class": "jifanglouceng",
       "unicode": "e61c",
       "unicode_decimal": 58908
-    },
-    {
-      "icon_id": "5961324",
-      "name": "路由器",
-      "font_class": "luyouqi",
-      "unicode": "ec62",
-      "unicode_decimal": 60514
     }
   ]
 }

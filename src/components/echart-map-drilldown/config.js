@@ -1,9 +1,9 @@
 const mapOption = {
-    title: {
-        text: 'echar地图使用示例',
-        subtext: '此demo来至于echart官方网站',
-        sublink: 'https://gallery.echartsjs.com/editor.html?c=x_2hwwDQ9'
-    },
+    // title: {
+    //     text: 'echart地图下钻',
+    //     subtext: '省-市-区-县',
+    //     sublink: 'https://gallery.echartsjs.com/editor.html?c=x_2hwwDQ9'
+    // },
     tooltip: {
         trigger: 'item',
         formatter: '{b}<br/>{c} (p / km2)'
@@ -18,6 +18,10 @@ const mapOption = {
             color: ['lightskyblue', 'yellow', 'orangered']
         }
     },
+    // grid: {
+    //     left: '5%',
+    //     right: '5%'
+    // },
     series: [
         {
             name: '香港18区人口密度',
@@ -26,6 +30,7 @@ const mapOption = {
             label: {
                 show: false
             },
+            zoom: 1.2,
             itemStyle: {
                 normal: {
                     labelLine: { show: false },

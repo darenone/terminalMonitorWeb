@@ -1,4 +1,3 @@
-import Home from '../views/Home.vue'
 import Layout from '@/views/layout.vue'
 
 export default [

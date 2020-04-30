@@ -9,3 +9,34 @@
         width: 50%;
     }
 }
+// table 样式
+.table-area {
+    width: 100%;
+    // border: 1px solid #dcdee2;
+    border-bottom: none;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 4px;
+    color: @color-fff;
+    th {
+        font-weight: 600;
+    }
+    th:first-child {
+        border-bottom: 1px solid @color-21509F;
+        // background: #f8f8f9;
+    }
+    th + th {
+        // border-left: 1px solid #dcdee2;
+        border-bottom: 1px solid @color-21509F;
+        // background: #f8f8f9;
+    }
+    td:first-child {
+        // border-bottom: 1px solid #dcdee2;
+    }
+    td + td {
+        height: 30px;
+        // border-left: 1px solid #dcdee2;
+        // border-bottom: 1px solid #dcdee2;
+    }
+}
