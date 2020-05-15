@@ -48,6 +48,7 @@
         .ivu-select-dropdown-list {
             .ivu-select-item {
                 color: @color-94AADC;
+                background: @color-163466;
             }
             .ivu-select-item:hover {
                 color: @color-01DAF9;
@@ -56,9 +57,170 @@
             .ivu-select-item-selected, .ivu-select-item-selected:hover {
                 color: @color-01DAF9;
             }
-            .ivu-select-item-focus {
-                background-color: @color-21509F;
+            .ivu-select-item-selected, .ivu-select-item-selected {
+                background: @color-21509F;
+            }
+            // .ivu-select-item-focus {
+            //     background: @color-163466;
+            // }
+        }
+    }
+}
+// table样式
+// .ivu-table {
+//     background: none;
+//     td {
+//         background: none;
+//     }
+//     .ivu-table-header {
+//         thead {
+//             tr {
+//                 background: @color-102B59;
+//                 th {
+//                     background: none;
+//                     border: none;
+//                 }
+//             }
+//         }
+//         tbody {
+//             tr {
+//                 td {
+//                     background: none;
+//                 }
+//                 td {
+//                     border: none;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// modal 样式
+.ivu-modal {
+    .ivu-modal-content {
+        background: @color-163466;
+        color: @color-fff;
+        border: 1px solid @color-0543ad;
+        .ivu-modal-header {
+            .ivu-modal-header-inner {
+                color: @color-fff;
+            }
+            border: none;
+        }
+        .ivu-modal-footer {
+            border: none;
+        }
+    }
+}
+
+// input 样式
+.ivu-input-wrapper {
+    .ivu-input {
+        background: none;
+        border: 1px solid @color-94AADC;
+    }
+}
+
+// form表单样式
+.ivu-form {
+    .ivu-form-item {
+        .ivu-form-item-label {
+            color: @color-94AADC;
+        }
+        // .ivu-form-item-content:hover {
+        //     border-color: @color-00D2EF;
+        // }
+        .ivu-form-item-content {
+            color: @color-fff;
+            .ivu-input-wrapper {
+                input {
+                    color: @color-fff;
+                }
+                input:hover {
+                    border-color: @color-00D2EF;
+                }
+                textarea {
+                    color: @color-fff;
+                }
+                textarea:hover {
+                    border-color: @color-00D2EF;
+                }
             }
         }
+    }
+}
+
+// ivu-transfer 样式
+.ivu-transfer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .ivu-transfer-list {
+        .ivu-transfer-list-header {
+            background: none;
+            border-color: @color-94AADC;
+            color: @color-fff;
+        }
+        .ivu-transfer-list-body {
+            border-color: @color-94AADC;
+            color: @color-fff;
+            .ivu-transfer-list-content {
+                .ivu-transfer-list-content-item {
+                    color: @color-fff;
+                }
+                .ivu-transfer-list-content-item:hover {
+                    background: none;
+                }
+            }
+        }
+        .ivu-checkbox-wrapper {
+            .ivu-checkbox {
+                .ivu-checkbox-inner {
+                    background: none;
+                    border-color: @color-0543ad;
+                }
+                .ivu-checkbox-focus {
+                    background: @color-21509F;
+                    color: @color-94AADC;
+                }
+            }
+        }
+    }
+    .ivu-transfer-operation {
+        .ivu-btn {
+            background: @color-21509F;
+            border: none;
+        }
+        .ivu-btn-primary[disabled] {
+            background: @color-626F8E;
+        }
+    }
+}
+
+// 单选框样式
+.ivu-radio-wrapper {
+    .ivu-radio {
+        .ivu-radio-inner {
+            background: none;
+            border-color: @color-0543ad;
+        }
+        .ivu-radio-inner::after {
+            background: @color-163466;
+        }
+        .ivu-radio-focus {
+            background: @color-21509F;
+        }
+        .ivu-radio-focus::after {
+            background: @color-21509F;
+        }
+    }
+}
+// ivu-dropdown 样式
+.ivu-dropdown {
+    .ivu-select-dropdown {
+        background:  @color-163466;
+        padding: 10px;
+        margin-top: 20px;
     }
 }

@@ -1,12 +1,12 @@
 // select 选择框样式
 .select-contain {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: baseline;
     color: @color-94AADC;
     padding-top: @padding-top-sm;
     .ivu-select {
-        width: 50%;
+        width: 100%;
     }
 }
 // table 样式
@@ -38,5 +38,94 @@
         height: 30px;
         // border-left: 1px solid #dcdee2;
         // border-bottom: 1px solid #dcdee2;
+    }
+}
+
+// 每个页面的title
+.contain-title {
+    color: @color-fff;
+    font-size: @font-size-md;
+    text-align: left;
+}
+.contain-subTitle {
+    color: @color-fff;
+    font-size: 18px;
+    text-align: left;
+    padding: 10px 0;
+    span {
+        color: @color-94AADC;
+        font-size: @font-size-sm;
+    }
+    i {
+        padding-right: 5px;
+    }
+}
+
+// button样式
+.button-custome1 {
+    background: @color-21509F!important;
+    border: none!important;
+    color:  @color-fff!important;
+    
+}
+.button-custome1:hover {
+    background: @color-0543ad!important;
+}
+.button-custome2 {
+    background: @color-626F8E!important;
+    border: none!important;
+    color:  @color-fff!important;
+    
+}
+.button-custome2:hover {
+    background: @color-454e65!important;
+}
+.button-custome3 {
+    background: @color-FA4B46!important;
+    border: none!important;
+    color:  @color-fff!important;
+    
+}
+.button-custome3:hover {
+    background: #fa4b46b8!important;
+}
+
+// sub-title 小标题样式
+.sub-title {
+    color: @color-fff;
+    .color {
+        display: inline-block;
+        padding-right: 5px;
+        + .color {
+            padding-left: 5px;
+        }
+    }
+    .color1 {
+        color: @color-E6AA1E;
+    }
+    .color2 {
+        color: @color-45C937;
+    }
+    .color3 {
+        color: @color-FA4B46;
+    }
+    .color4 {
+        color: @color-01DAF9;
+    }
+}
+// set-box 样式
+.set-box {
+    color: @color-94AADC;
+    .title {
+        text-align: right;
+    }
+    .remark {
+        text-align: left;
+        padding-left: 10px;
+        line-height: 16px;
+        i {
+            display: inline-block;
+            padding-right: 5px;
+        }
     }
 }

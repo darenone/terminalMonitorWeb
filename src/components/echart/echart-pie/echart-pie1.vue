@@ -1,8 +1,8 @@
 <template>
     <section style="width: 100%;height: 100%;">
-        <div :id="id" ref="chartLine" v-show="!nodata" :style="styles"></div>
+        <div :id="id" ref="chartPie" v-show="!nodata" :style="styles"></div>
         <div v-show="nodata"  class="no-data" :style="styles">
-            <img src="@/assets/img/nodata/line_nodata.png" alt="">
+            <img src="@/assets/img/nodata/pie_nodata.png" alt="">
         </div>
     </section>
 </template>
@@ -32,7 +32,6 @@ export default {
         return {
             nodata: false,
             screenWidth: document.body.clientWidth,
-            timer: false
         }
     },
     computed: {

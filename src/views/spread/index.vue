@@ -81,7 +81,7 @@
             <Col span="6">
                 <panel-box>
                     <template slot="title">
-                        <i class="iconfont icon-fenbu"></i><span>过去12个月终端重量趋势</span>
+                        <i class="iconfont icon-fenbu"></i><span>过去12个月终端总量趋势</span>
                     </template>
                     <template slot="content">
                         <echart-line1
@@ -94,30 +94,147 @@
             <Col span="6">
                 <panel-box>
                     <template slot="title">
-                        <i class="iconfont icon-fenbu"></i><span>过去12个月终端重量趋势</span>
-                        <template slot="content">
-
-                        </template>
+                        <i class="iconfont icon-fenbu"></i><span>过去30天日活趋势</span>
+                    </template>
+                    <template slot="content">
+                        <echart-line1
+                        :id="'echartLine2'"
+                        :styles="{ height: '200px', width: '100%' }"
+                        :data="series_line2"></echart-line1>
                     </template>
                 </panel-box>
             </Col>
             <Col span="6">
                 <panel-box>
                     <template slot="title">
-                        <i class="iconfont icon-fenbu"></i><span>过去12个月终端重量趋势</span>
-                        <template slot="content">
-
-                        </template>
+                        <i class="iconfont icon-fenbu"></i><span>过去24小时在线趋势</span>
+                    </template>
+                    <template slot="content">
+                        <echart-line1
+                        :id="'echartLine3'"
+                        :styles="{ height: '200px', width: '100%' }"
+                        :data="series_line3"></echart-line1>
                     </template>
                 </panel-box>
             </Col>
             <Col span="6">
                 <panel-box>
                     <template slot="title">
-                        <i class="iconfont icon-fenbu"></i><span>过去12个月终端重量趋势</span>
-                        <template slot="content">
-
-                        </template>
+                        <i class="iconfont icon-fenbu"></i><span>版本分布占比</span>
+                    </template>
+                     <template slot="content">
+                        <echart-line1
+                        :id="'echartLine4'"
+                        :styles="{ height: '200px', width: '100%' }"
+                        :data="series_line4"></echart-line1>
+                    </template>
+                </panel-box>
+            </Col>
+        </Row>
+        <Row type="flex" justify="space-between" class="row-box" style="margin: 10px 0;">
+            <Col span="6">
+                <panel-box>
+                    <template slot="title">
+                        <i class="iconfont icon-fenbu"></i><span>下载速率分布</span>
+                    </template>
+                    <template slot="content">
+                        <echart-pie1
+                        :id="'echartPie1'"
+                        :styles="{ height: '200px', width: '100%' }"
+                        :data="series_pie1"></echart-pie1>
+                    </template>
+                </panel-box>
+            </Col>
+            <Col span="6">
+                <panel-box>
+                    <template slot="title">
+                        <i class="iconfont icon-fenbu"></i><span>终端活跃度分布</span>
+                    </template>
+                    <template slot="content">
+                        <echart-pie1
+                        :id="'echartPie2'"
+                        :styles="{ height: '200px', width: '100%' }"
+                        :data="series_pie2"></echart-pie1>
+                    </template>
+                </panel-box>
+            </Col>
+            <Col span="6">
+                <panel-box>
+                    <template slot="title">
+                        <i class="iconfont icon-fenbu"></i><span>网络接入方式分布</span>
+                    </template>
+                    <template slot="content">
+                        <echart-pie1
+                        :id="'echartPie3'"
+                        :styles="{ height: '200px', width: '100%' }"
+                        :data="series_pie3"></echart-pie1>
+                    </template>
+                </panel-box>
+            </Col>
+            <Col span="6">
+                <panel-box>
+                    <template slot="title">
+                        <i class="iconfont icon-fenbu"></i><span>厂商分布占比</span>
+                    </template>
+                     <template slot="content">
+                        <echart-pie1
+                        :id="'echartPie4'"
+                        :styles="{ height: '200px', width: '100%' }"
+                        :data="series_pie4"></echart-pie1>
+                    </template>
+                </panel-box>
+            </Col>
+        </Row>
+        <Row type="flex" justify="space-between" class="row-box">
+            <Col span="6">
+                <panel-box>
+                    <template slot="title">
+                        <i class="iconfont icon-fenbu"></i><span>终端状态占比</span>
+                    </template>
+                    <template slot="content">
+                        <echart-pie1
+                        :id="'echartPie5'"
+                        :styles="{ height: '200px', width: '100%' }"
+                        :data="series_pie5"></echart-pie1>
+                    </template>
+                </panel-box>
+            </Col>
+            <Col span="6">
+                <panel-box>
+                    <template slot="title">
+                        <i class="iconfont icon-fenbu"></i><span>CPU性能你分布</span>
+                    </template>
+                    <template slot="content">
+                        <echart-pie1
+                        :id="'echartPie6'"
+                        :styles="{ height: '200px', width: '100%' }"
+                        :data="series_pie6"></echart-pie1>
+                    </template>
+                </panel-box>
+            </Col>
+            <Col span="6">
+                <panel-box>
+                    <template slot="title">
+                        <i class="iconfont icon-fenbu"></i><span>信号强度分布</span>
+                    </template>
+                    <template slot="content">
+                        <echart-pie1
+                        :id="'echartPie7'"
+                        :styles="{ height: '200px', width: '100%' }"
+                        :data="series_pie7"></echart-pie1>
+                    </template>
+                </panel-box>
+            </Col>
+            <Col span="6">
+                <panel-box>
+                    <template slot="title">
+                        <i class="iconfont icon-fenbu"></i><span>运营商分布占比</span>
+                    </template>
+                     <template slot="content">
+                        <echart-pie1
+                        :id="'echartPie8'"
+                        :styles="{ height: '200px', width: '100%' }"
+                        :data="series_pie8"></echart-pie1>
                     </template>
                 </panel-box>
             </Col>
@@ -131,8 +248,10 @@ import panelBox from '_c/panel'
 import EMapDrilldown from '_c/echart-map-drilldown'
 import echartLines from '_c/echart/echart-line'
 const { echartLine1 } = echartLines
+import echartPies from '_c/echart/echart-pie'
+const { echartPie1 } = echartPies
 export default {
-    components: { countTo, drawerBox, panelBox, EMapDrilldown, echartLine1 },
+    components: { countTo, drawerBox, panelBox, EMapDrilldown, echartLine1, echartPie1 },
     data () {
         return {
             block_value: '',
@@ -154,9 +273,81 @@ export default {
                 { rank: 6, areaName: '河南省', num: 100, rate: 30 }
             ],
             series_line1: [
-                ['Mon', 100],
-                ['Tue', 200],
-                ['Wed', 200]
+                ['1', 100],
+                ['2', 200],
+                ['3', 150],
+                ['10', 150],
+                ['12', 110]
+            ],
+            series_line2: [
+                ['1', 100],
+                ['2', 200],
+                ['3', 150],
+                ['4', 45],
+                ['5', 110],
+                ['6', 10],
+                ['7', 30],
+                ['8', 20]
+            ],
+            series_line3: [
+                ['1', 100],
+                ['2', 200],
+                ['3', 150],
+                ['4', 45],
+                ['5', 110],
+                ['6', 10],
+                ['7', 30],
+                ['8', 20]
+            ],
+            series_line4: [
+                ['1', 100],
+                ['2', 200],
+                ['3', 150],
+                ['4', 45],
+                ['5', 110],
+                ['6', 10],
+                ['7', 30],
+                ['8', 20]
+            ],
+            series_pie1: [
+                { value: 40, name: '高' },
+                { value: 30, name: '中' },
+                { value: 20, name: '低' }
+            ],
+            series_pie2: [
+                { value: 40, name: '高' },
+                { value: 30, name: '中' },
+                { value: 20, name: '低' }
+            ],
+            series_pie3: [
+                { value: 40, name: '有线' },
+                { value: 30, name: '无线' },
+            ],
+            series_pie4: [
+                { value: 40, name: '小米' },
+                { value: 30, name: '中兴' },
+                { value: 30, name: '华为' },
+            ],
+            series_pie5: [
+                { value: 40, name: '在线' },
+                { value: 30, name: '离线' },
+            ],
+            series_pie6: [
+                { value: 40, name: '高' },
+                { value: 30, name: '中' },
+                { value: 20, name: '低' }
+            ],
+            series_pie7: [
+                { value: 40, name: '优' },
+                { value: 30, name: '良' },
+                { value: 20, name: '中' },
+                { value: 20, name: '差' }
+            ],
+            series_pie8: [
+                { value: 40, name: '电信' },
+                { value: 30, name: '移动' },
+                { value: 20, name: '联通' },
+                { value: 20, name: '其它' }
             ]
         }
     }
